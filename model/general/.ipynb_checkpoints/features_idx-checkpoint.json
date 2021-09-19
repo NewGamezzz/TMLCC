@@ -1,0 +1,1 @@
+{"volume [A^3]": 0, "weight [u]": 1, "surface_area [m^2/g]": 2, "void_fraction": 3, "void_volume [cm^3/g]": 4, "metal_linker": 5, "organic_linker1": 6, "organic_linker2": 7, "topology": 8, "catalog CO2/N2": 9, "CO2/N2_selectivity": 10, "heat_adsorption_CO2_P0.15bar_T298K [kcal/mol]": 11}
