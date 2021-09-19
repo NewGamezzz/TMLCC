@@ -1,4 +1,4 @@
-numpy==1.19
+numpy==1.19.2
 tensorflow==2.5
 torch
 pandas
@@ -6,3 +6,9 @@ sklearn
 matplotlib
 seaborn
 hyperopt
+ase
+spglib
+py3Dmol
+pandas-profiling[notebook]
+scipy
+category_encoders
