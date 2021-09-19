@@ -34,3 +34,26 @@ def clean_heat_adsorption(X_train, X_test, features_idx, num_catalog):
     for c in range(num_catalog):
         heat_adsorp_list[np.logical_and(np.isnan(heat_adsorp_list), catalog==c)] = heat_adsorp_catalog['mean_std'][c][0]
         heat_adsorp_list[np.logical_and(np.isinf(heat_adsorp_list), catalog==c)] = heat_adsorp_catalog['mean_std'][c][0]
+    
+def generate_selectivity_catalog(df):
+    num_catalog = 2
+    bound_range = [0, 7] # [0, 7, 10, 20, 40]
+    count = []
+    mask = []
+
+    for i, bound in enumerate(bound_range):
+        if i == len(bound_range)-1:
+            m = np.logical_and(bound < df['CO2/N2_selectivity'], df['CO2/N2_selectivity'] <= np.inf)
+            mask.append(m)
+            count.append(m.sum())
+        else:
+            m = np.logical_and(bound < df['CO2/N2_selectivity'], df['CO2/N2_selectivity'] <= bound_range[i+1])
+            mask.append(m)
+            count.append(m.sum())
+
+    catalog = np.zeros_like(df['CO2/N2_selectivity'].values)
+    for i, m in enumerate(mask):
+        catalog[m] = i
+
+    df.insert(11, "catalog CO2/N2", catalog)
+    return df

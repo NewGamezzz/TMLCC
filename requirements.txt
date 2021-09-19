@@ -5,3 +5,4 @@ pandas
 sklearn
 matplotlib
 seaborn
+hyperopt
