@@ -3,8 +3,8 @@ tensorflow==2.5
 torch
 pandas
 sklearn
-matplotlib
-seaborn
+matplotlib==3.4.3
+seaborn==0.11.2
 hyperopt
 ase
 spglib
@@ -12,3 +12,9 @@ py3Dmol
 pandas-profiling[notebook]
 scipy
 category_encoders
+deepchem
+rdkit-pypi
+gensim==3.8.3
+torch_sparse 
+torch_geometric
+torch-scatter
